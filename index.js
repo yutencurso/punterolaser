@@ -2,8 +2,9 @@ const body = document.body;
 const efecto = document.getElementById('efecto');
 efecto.style.position = "fixed";
 efecto.style.pointerEvents = "none";
-body.style.cursor = "none";
-efecto.style.userSelect = "none";
+const style = document.createElement('style');
+style.innerHTML = `* { cursor: none !important; }`;
+document.head.appendChild(style);
     body.addEventListener('mousemove', (evento) => {
         const x = evento.clientX; 
         const y = evento.clientY; 

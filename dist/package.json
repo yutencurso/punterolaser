@@ -1,0 +1,6 @@
+{
+  "name": "puntero-magico",
+  "version": "1.0.0", 
+  "description": "un elemento que sigue y sigue al puntero del ratón",
+  "main": "dist/index.js"
+}

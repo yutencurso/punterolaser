@@ -12,3 +12,6 @@ window.addEventListener('mousemove', (evento) => {
     const y = evento.clientY;
     efecto.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 });
+window.addEventListener('mouseout', () => {
+    efecto.style.display = 'none';
+}

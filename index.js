@@ -10,5 +10,5 @@ document.documentElement.style.cursor = 'none';
 window.addEventListener('mousemove', (evento) => {
     const x = evento.clientX;
     const y = evento.clientY;
-    efecto.style.transform = `translate(${x}px, ${y}px)`;
+    efecto.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 });

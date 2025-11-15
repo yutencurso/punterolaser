@@ -2,6 +2,7 @@ const body = document.body;
 const efecto = document.getElementById('efecto');
 efecto.style.position = "fixed";
 efecto.style.pointerEvents = "none";
+efecto.style.zIndex = "99999";
 const style = document.createElement('style');
 style.innerHTML = `* { cursor: none !important; }`;
 document.head.appendChild(style);

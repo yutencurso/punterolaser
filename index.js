@@ -14,4 +14,4 @@ window.addEventListener('mousemove', (evento) => {
 });
 window.addEventListener('mouseout', () => {
     efecto.style.display = 'none';
-}
+});

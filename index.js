@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const efecto = document.getElementById('efecto');
+    const efecto = document.getElementsByClassName('cursor');
+    const todosLosElementos = document.querySelectorAll('*');
+    todosLosElementos.forEach(elemento => {
+        elemento.style.cursor = 'none';
+    });
 
     if (efecto) {
         document.body.style.cursor = 'none';

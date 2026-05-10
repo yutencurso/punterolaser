@@ -1,17 +1,34 @@
-const body = document.body;
-const efecto = document.getElementById('efecto');
-efecto.style.position = "fixed";
-efecto.style.pointerEvents = "none";
-efecto.style.zIndex = "99999";
-const style = document.createElement('style');
-style.innerHTML = `html, body, *, a, button { cursor: none !important; }`;
-document.head.appendChild(style);
-document.documentElement.style.cursor = 'none';
-window.addEventListener('mousemove', (evento) => {
-    const x = evento.clientX;
-    const y = evento.clientY;
-    efecto.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-});
-window.addEventListener('mouseout', () => {
-    efecto.style.display = 'none';
+document.addEventListener('DOMContentLoaded', () => {
+    const efecto = document.getElementById('efecto');
+
+    if (efecto) {
+        document.body.style.cursor = 'none';
+        efecto.style.position = 'fixed';
+        efecto.style.pointerEvents = 'none';
+        efecto.style.display = 'none';
+        efecto.style.zIndex = '9999';
+
+        const updatePosition = (e) => {
+            efecto.style.left = `${e.clientX}px`;
+            efecto.style.top = `${e.clientY}px`;
+        };
+
+        const showCursor = () => {
+            efecto.style.display = 'block';
+        };
+
+        const hideCursor = () => {
+            efecto.style.display = 'none';
+        };
+
+        document.addEventListener('mousemove', (e) => {
+            if (efecto.style.display === 'none') {
+                showCursor();
+            }
+            updatePosition(e);
+        });
+
+        document.addEventListener('mouseenter', showCursor);
+        document.documentElement.addEventListener('mouseleave', hideCursor);
+    }
 });
